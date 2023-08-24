@@ -1,0 +1,78 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'NanumSquareNeo-Variable';
+}
+
+@font-face {
+	font-family: 'NanumSquareNeo-Variable';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2')
+		format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.container {
+	width: 500px;
+	height: 600px;
+	background: linear-gradient(skyblue, rgb(247, 167, 145));
+	margin: 0 auto;
+}
+
+header {
+	width: 100%;
+	background-color: black;
+	height: 60px;
+	line-height: 60px;
+}
+
+header p {
+	color: #fff;
+	padding-left: 20px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+	padding: 10px;
+	width: 100%;
+	background-color: rgba(13, 117, 155, 0.3);
+	display: block;
+	text-align: center;
+	border-bottom: 2px solid #a89a9a;
+	margin-top: 10px;
+}
+
+a:visited {
+	color: #fff;
+}
+
+.info {
+	background-color: rgba(13, 141, 187, 0.7);
+	padding-left: 10px;
+	padding-top: 10px;
+	color: #fff;
+	font-size: 14px;
+}
+
+.add {
+	margin: 0 5px;
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px solid rgb(127, 127, 228);
+	color: #fff;
+}
+
+#submitt {
+	padding: 10px;
+	color: #fff;
+	border: none;
+	font-size: 16px;
+	background-color: #a1b3c8;
+	margin: 10px 5px;
+	cursor: pointer;
+}
