@@ -14,18 +14,23 @@
                     url: '/delivery/api/admin/listWorker?region=' + region,
                     type: 'GET',
                     success: function (data) {
-                        console.log(data);
+                        // console.log(data);
                         var resultTableBody = $('#resultTableBody');
                         resultTableBody.empty(); // 기존 결과 초기화
+                        
+                        var region = $('#searchRegion').val(); // 검색한 지역 값 가져오기
+                        var resultTitle = '<h2>' + region + ' 검색 결과</h2>';
+                        $('#resultTitle').html(resultTitle); // 검색 결과 제목 설정
 
                         // 받아온 JSON 데이터를 테이블 형태로 추가
                         for (var i = 0; i < data.length; i++) {
                             var worker = data[i];
                             var row = '<tr style="border: 1px solid black;">' +
-                                '<td style="border: 1px solid black; padding: 8px; text-align: left;">' + worker.workerId + '</td>' +
-                                '<td style="border: 1px solid black; padding: 8px; text-align: left;">' + worker.workerEmail + '</td>' +
-                                '<td style="border: 1px solid black; padding: 8px; text-align: left;">' + worker.workerCity + '</td>' +
-                                '</tr>';
+	                            '<td style="border: 1px solid black; padding: 8px; text-align: left;">' + worker.workerId + '</td>' +
+	                            '<td style="border: 1px solid black; padding: 8px; text-align: left;">' +
+	                            '<a href="/delivery/admin/listDelivery?workerId=' + worker.workerId + '">' + worker.workerEmail + '</a></td>' +
+	                            '<td style="border: 1px solid black; padding: 8px; text-align: left;">' + worker.workerCity + '</td>' +
+	                            '</tr>';
                             resultTableBody.append(row);
                         }
 
@@ -46,7 +51,7 @@
 </form>
 
 <div id="resultTableDiv" style="display: none;">
-    <h2>검색 결과</h2>
+	<div id="resultTitle"></div>
     <table id="resultTable" style="border-collapse: collapse; width: 100%;">
         <thead>
         <tr style="background-color: lightgray;">
