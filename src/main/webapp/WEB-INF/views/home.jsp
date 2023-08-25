@@ -10,6 +10,6 @@
 	<h1>카드 배송 시스템</h1>
 
 	<p><a href="<c:url value="/admin/searchWorkersForm"/>">관리자 페이지로</a></p>
-    <p><a href="<c:url value="/user"/>">배송 기사 페이지로</a></p>
+    <p><a href="<c:url value="/worker/loginForm"/>">배송 기사 페이지로</a></p>
 </body>
 </html>
