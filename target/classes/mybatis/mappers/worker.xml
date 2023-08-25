@@ -15,4 +15,27 @@
 			SELECT * FROM team08_worker WHERE worker_city = #{region}
 		]]>
 	</select>
+	
+	<select id="findByEmail" resultType="workerVO">
+		<![CDATA[
+			select * from team08_worker
+			where worker_email = #{workerEmail}
+		]]>
+	</select>
+	
+	<insert id="save" parameterType="workerVO">
+		<![CDATA[
+			insert into team08_worker(worker_id, worker_email, worker_city)
+			values(worker_sequence.nextval, #{workerEmail}, #{workerCity})
+		]]>
+	</insert>
+	
+	<update id="update" parameterType="workerVO">
+		<![CDATA[
+			update team08_worker
+			set worker_city=#{workerCity}
+			where worker_id=#{workerId}
+		]]>
+	</update>
+	
 </mapper>

@@ -14,13 +14,15 @@
 		<header>
 			<p>Smart Quick Parcel Service</p>
 		</header>
-		<form action="${contextPath }/login" method="post">
+		<form action="${contextPath }/worker/login" method="post">
 			<div class="info" style="height: 60px;">등록할 메일주소를 입력하세요.</div>
 			<input type="text" class="add" autofocus
 				style="width: 95%; border: none; color: #000; background: transparent; outline: none; font-size: 16px;"
-				name="identifier" maxlength="40" />
-			<div class="info" style="height: 60px;">접속할 주소를 입력하세요.</div>
-			<p class="add">http://localhost:9000/tomcat/</p>
+				name="workerEmail" maxlength="40" />
+			<div class="info" style="height: 60px;">담당할 지역을 입력하세요.</div>
+			<input type="text" class="add" autofocus
+				style="width: 95%; border: none; color: #000; background: transparent; outline: none; font-size: 16px;"
+				name="workerCity" maxlength="40" />
 			<input type="submit" id="submitt" value="입력한 내용을 저장합니다.">
 		</form>
 	</div>

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
       PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-   
+
 <mapper namespace="mapper.delivery">
 	<resultMap type="deliveryVO" id="deliveryResult">
 		<result property="deliveryId" column="delivery_id" />
@@ -19,13 +19,14 @@
 		<result property="productUrl" column="product_url" />
 		<result property="comments" column="comments" />
 	</resultMap>
-	
-	<select id="selectDeliveriesByWorker" parameterType="int" resultMap="deliveryResult">
+
+	<select id="selectDeliveriesByWorker" parameterType="int"
+		resultMap="deliveryResult">
 		<![CDATA[
 			SELECT * FROM team08_delivery WHERE worker_id = #{workerId}
 		]]>
 	</select>
-	
+
 	<insert id="insertDelivery" parameterType="deliveryVO">
 		<![CDATA[
 			INSERT INTO team08_delivery (delivery_id, worker_id, c_identifier, c_address, 
@@ -34,4 +35,19 @@
 							#{cState}, #{cZip}, #{customer}, #{product}, #{productUrl}, #{comments})
 		]]>
 	</insert>
+
+	<select id="findDeliveryAllByWorkerId" resultMap="deliveryResult"
+		parameterType="int">
+		<![CDATA[
+			SELECT * FROM team08_worker WHERE worker_id = #{workerId}
+		]]>
+	</select>
+
+	<select id="findDeliveryById" resultType="deliveryVO"
+		parameterType="int">
+		<![CDATA[
+			SELECT * FROM team08_delivery WHERE delivery_id = #{deliveryId}
+		]]>
+	</select>
+	
 </mapper>
