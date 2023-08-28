@@ -8,6 +8,13 @@ public class WorkerVO {
 	
 	public WorkerVO() {
 	}
+	
+	public WorkerVO(int workerId, String workerEmail, String workerCity) {
+		this.workerId = workerId;
+		this.workerEmail = workerEmail;
+		this.workerCity = workerCity;
+	}
+
 
 	public int getWorkerId() {
 		return workerId;

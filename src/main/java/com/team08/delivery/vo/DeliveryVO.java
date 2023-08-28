@@ -18,6 +18,24 @@ public class DeliveryVO {
 	
 	public DeliveryVO() {
 	}
+	
+	public DeliveryVO(int deliveryId, int workerId, String status, String cSignature, String cIdentifier,
+			String cAddress, String cCity, String cState, String cZip, String customer, String product,
+			String productUrl, String comments) {
+		this.deliveryId = deliveryId;
+		this.workerId = workerId;
+		this.status = status;
+		this.cSignature = cSignature;
+		this.cIdentifier = cIdentifier;
+		this.cAddress = cAddress;
+		this.cCity = cCity;
+		this.cState = cState;
+		this.cZip = cZip;
+		this.customer = customer;
+		this.product = product;
+		this.productUrl = productUrl;
+		this.comments = comments;
+	}
 
 	public int getDeliveryId() {
 		return deliveryId;

@@ -24,20 +24,20 @@
 			<p>
 				user:
 				<c:choose>
-					<c:when test="${sessionScope.identifier eq null}">
+					<c:when test="${worker eq null}">
           				계정 등록을 해주세욤
          			</c:when>
 					<c:otherwise>
-          				${sessionScope.identifier}
+          				${worker}
           			</c:otherwise>
 				</c:choose>
 				<br>
 			</p>
 			<p>server:http://localhost:9000/tomcat/</p>
 		</div>
-		<a href="#" onclick="gkatn1();">배송 불러오기</a> <a
-			href="${contextPath }/reserveList">배송예약목록</a> <a
-			href="${contextPath }/addForm">계정 등록</a>
+		<a href="${contextPath }/worker/1">배송 불러오기</a> 
+		<a href="${contextPath }/worker/delivery">배송예약목록</a>
+		<a href="${contextPath }/worker/login">계정 등록</a>
 	</div>
 </body>
 </html>
